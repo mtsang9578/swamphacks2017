@@ -1,46 +1,48 @@
-<!-- views/signup.ejs -->
-<!doctype html>
+<!-- Login page with login form -->
+
 <html>
-<head>
-    <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-        body        { padding-top:80px; }
-    </style>
-</head>
-<body>
-<div class="container">
+  <head>
+    <title>Depression</title>
+    <link type="text/css" rel="stylesheet" href="resources/text.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
+  </head>
 
-    <div class="col-sm-6 col-sm-offset-3">
+  <body>
 
-        <h1><span class="fa fa-sign-in"></span> Signup</h1>
+<div class = "background">
 
-        <!-- show any messages that come back with authentication -->
-        <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-        <% } %>
+<!-- Header -->
 
+    <div class="static"><ul>
+      <li><a href="index.html"><img src="resources/HomeIcon.png"></a>
+      <li><a href="resources2.html">Resources</a>
+      <li><a href="index3.html">Site Info</a>
+    </div></ul>
+
+<!-- Content -->
 
 
         <!-- LOGIN FORM -->
-        <form action="/signup" method="post">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
-            </div>
-
-            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-        </form>
-
-        <hr>
-
-        <p>Already have an account? <a href="/login">Login</a></p>
-        <p>Or go <a href="/">home</a>.</p>
+        <div class="static2">
+        <div class="moving"><h1>Sign Up</h1>
+          <div class="together">
+        <section class="login" style="float:right">
+        <form action="/login" method="post">
+        <div class="form-group">
+            <label class="email">Email</label>
+            <br>
+            <input type="text" class="form-control" name="email" size="30">
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="password">Password</label>
+            <br>
+            <input type="password" class="form-control" name="password" size="30">
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-warning btn-lg">SIGN UP</button>
+        <p class="password">Already have an account? <a href="login.html">Login</a></p>
+      </form></section>
 
     </div>
 
