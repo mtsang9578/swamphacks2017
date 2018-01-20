@@ -1,15 +1,20 @@
 var express = require ('express');
 var app = express();
-var port = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
 
 var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var image-detection = require('./image-detection');
-var word-detection = require('./word-detection');
+var imageUpload = require('./image-upload')(app);
+var wordDetection = require('./word-detection');
 
-require('./app/routes.js')(app);
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+
+app.set('view engine', 'ejs');
+
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log("the app is listening on port " + port);
