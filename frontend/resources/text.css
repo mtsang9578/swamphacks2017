@@ -1,0 +1,40 @@
+body {
+  background-color: #EDEDED;
+  font-family: "Helvetica Neue";
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  color: #131936;
+  font-weight: 10;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #131936;
+  font-weight: 10;
+}
+
+h5 {
+  font-size: 15px;
+  text-align: center;
+  color: #3E3E3E;
+  font-weight: 10;
+}
+
+button {
+  background-color: #EDEDED;
+}
+
+div {
+  text-align: center;
+}
+.dropbtn {
+  color: black;
+}
+
+.profile {
+  position: fixed;
+}
