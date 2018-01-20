@@ -56,5 +56,24 @@ module.exports = {
       console.error('ERROR:', err);
     });
   // [END vision_label_detection]
-}
+  },
+  detectFaceExpression : function (fileURL) {
+  client
+  .faceDetection(fileURL)
+  .then(results => {
+    const faces = results[0].faceAnnotations;
+
+    console.log('Faces:');
+    faces.forEach((face, i) => {
+      console.log(`  Face #${i + 1}:`);
+      console.log(`    Joy: ${face.joyLikelihood}`);
+      console.log(`    Anger: ${face.angerLikelihood}`);
+      console.log(`    Sorrow: ${face.sorrowLikelihood}`);
+      console.log(`    Surprise: ${face.surpriseLikelihood}`);
+    });
+  })
+  .catch(err => {
+    console.error('ERROR:', err);
+  });
+  }
 }
