@@ -25,13 +25,16 @@ h5 {
 }
 
 button {
-  background-color: inherit;
-  text-align: center;
+  background-color: #EDEDED;
 }
 
 div {
   text-align: center;
-
+}
 .dropbtn {
   color: black;
+}
+
+.profile {
+  position: fixed;
 }
