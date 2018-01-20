@@ -9,7 +9,6 @@ var session      = require('express-session');
 var imageUpload = require('./image-upload')(app);
 var emotionDetection = require('./emotion-detection');
 
-require('./app/routes.js')(app);
 
 var sampleText = "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.";
 emotionDetection.emotionResponce(sampleText, function(response) {
