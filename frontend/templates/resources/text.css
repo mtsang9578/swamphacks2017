@@ -12,7 +12,6 @@ h1 {
 
 h3 {
   font-size: 30px;
-  text-align: center;
   color: #131936;
   font-weight: 10;
   font-family: "Kalam", cursive;
@@ -44,7 +43,6 @@ body .transbox {
     border: 0px solid black;
     z-index:1;
     position: static;
-    align-content:center;
     border-radius: 50px;
 }
 
@@ -129,8 +127,7 @@ li a:hover:not(.active) {
 .info {
   font-family: "Delius", cursive;
   font-size: 18;
-  margin-left: 100px;
-  margin-right: 100px;
+
 }
 
 .infoHeader {
@@ -199,13 +196,11 @@ body .login {
 div .together {
   display: flex;
   justify-content: center;
+  text-align: left;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .pics {
   max-height: 300px;
-  margin-left: 70px;
-}
-
-div .buttons {
-
 }
