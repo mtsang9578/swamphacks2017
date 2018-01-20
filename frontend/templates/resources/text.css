@@ -1,6 +1,5 @@
 body {
   background-image: url(city2.gif);
-
 }
 
 h1 {
@@ -34,10 +33,6 @@ button {
   font-size: 30;
   border-radius: 20px;
   border: 0px;
-}
-
-div {
-  text-align: center;
 }
 
 body .transbox {
@@ -113,6 +108,7 @@ li a:hover:not(.active) {
 
 .moving {
   height: 300px;
+  text-align: center;
 }
 
 .profile {
@@ -196,9 +192,20 @@ body .login {
   position: static;
   align-content:center;
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 div .together {
   display: flex;
   justify-content: center;
+}
+
+.pics {
+  max-height: 300px;
+  margin-left: 70px;
+}
+
+div .buttons {
+
 }
