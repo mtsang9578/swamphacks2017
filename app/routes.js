@@ -110,6 +110,8 @@ var User = require ('./models/user.js');
 
 //----------------------------UPLOAD----------------------------------------
 
+    var googleDetection = require('../google-vision.js');
+
     // =====================================
     // Upload
     // =====================================
@@ -118,30 +120,55 @@ var User = require ('./models/user.js');
         //Make sure the input name is file-to-upload
         //fs.rename(req.file.path, 'upload'/req.body.filename);
         // console.log(req.files);
-        res.send('you were successful');
         //Sends to a remote database
         var i = 0;
-        req.files.forEach(function(file){
+        req.files.forEach(function(file) {
             cloudinary.v2.uploader.upload(file.path, {
                 folder:'uploads',
                 use_filename:true
                 }, function (error, result) {
+                //SAVES IMAGES TO DATABASE ON UPLOAD
+
                     i++;
                     if (error) {
                         console.log("error ocurred", error);
                     } else {
                         //saveSquirrelPic(result);
                         uploadedFiles.push(result.url);
+                    } if (i === req.files.length) {
+                        //First perform analysis
+                        var analysis = require ('./process-screenshots.js');
+                        analysis.concentrateText(uploadedFiles, function(json) {
+
+                            //Once finished, save the url's to the database;
+                            req.user.screenshotCollections.push({
+                                'urls' : uploadedFiles,
+                                'description' : " ",
+                                'analysis' : json
+                            });
+
+                            var query = {'_id' : req.user._id};
+                            User.findOneAndUpdate(query, req.user, {upsert:true}, function(err, doc) {
+                                if (err) res.send(500, { error: err });
+                                res.render('analysis.ejs', );
+                            });
+                        });
+
+
                     }
-                    if (i === req.files.length) {
-                        console.log(uploadedFiles);
-                        console.log(req.user);
-                    }
-                }
-            );
-        });
-        //fs.unlink(req.file.path, function(err, result) {if(err) console.log(err)});
+                });
+                //fs.unlink(req.file.path, function(err, result) {if(err) console.log(err)});
+            });
+
+
+        //GENERATES AN ANALYSIS USING GOOGLE VISION STUFF
+
+
+
     });
+
+
+
 
 //----------------------------RESOURCES----------------------------------------
 
