@@ -1,5 +1,35 @@
 body {
   background-image: url(city2.gif);
+
+}
+.background{
+  background-image: url(city2.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.static {
+  position: fixed;
+  width: 99%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.static2 {
+  position: relative;
+  height: 85%;
+  overflow-y: scroll;
+  display: block;
+  margin-top: 100px;
+}
+
+.moving {
+  height: 300px;
 }
 
 h1 {
@@ -56,7 +86,6 @@ body .transbox {
     border: 0px solid black;
     z-index:1;
     position: static;
-    align-content:center;
     border-radius: 50px;
 }
 
@@ -102,8 +131,8 @@ li a:hover:not(.active) {
 .info {
   font-family: "Delius", cursive;
   font-size: 18;
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .infoHeader {
@@ -115,4 +144,8 @@ li a:hover:not(.active) {
 
 .open {
   font-size: 100;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
