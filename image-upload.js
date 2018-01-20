@@ -12,6 +12,8 @@ let storage = multer.diskStorage({
        cb(null, req.body.filename + '_' + Date.now());
     }
 });
+
+
 const upload = multer({storage: storage});
 
 const cloudinary = require('cloudinary');
@@ -19,5 +21,6 @@ cloudinary.config({
     cloud_name: 'mtsang32',
     api_key: '489781664195457',
     api_secret: 'uo3KFpPvQPCGfavJrbafo9Sntzs'
-})
+});
 require('./app/routes.js')(app, upload, cloudinary);
+}
