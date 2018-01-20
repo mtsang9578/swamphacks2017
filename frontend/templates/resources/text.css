@@ -127,7 +127,16 @@ li a:hover:not(.active) {
 .info {
   font-family: "Delius", cursive;
   font-size: 18;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
+.info2 {
+  font-family: "Delius", cursive;
+  font-size: 18;
+  text-align: right;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .infoHeader {
@@ -179,7 +188,7 @@ li a:hover:not(.active) {
 
 body .login {
   text-align: center;
-  height: 250px;
+  height: 285px;
   width: 400px;
   padding-top: 50px;
   padding-bottom: 50px;
