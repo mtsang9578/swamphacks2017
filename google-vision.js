@@ -5,8 +5,8 @@ const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient({
 	keyFilename: './googleKeyFile.json'
 });
-const fileNameConst = "./text.png";
-module.exports = { 
+const fileNameConst = "./text1.jpg";
+module.exports = {
   detectLabels : function (fileName) {
   /**
    * TODO(developer): Uncomment the following line before running the sample.
@@ -15,11 +15,42 @@ module.exports = {
 
   // Performs label detection on the local file
   client
-    .textDetection(fileNameConst)
+    .documentTextDetection(fileNameConst)
     .then(results => {
-      const labels = results[0].textAnnotations;
-      console.log('Text:');
-      labels.forEach(text => console.log(text));
+      const labels = results[0].fullTextAnnotation;
+
+    var totalString = '';
+    var width = labels.pages[0].width;
+    var blocks = labels.pages[0].blocks;
+    var blockString = '';
+    blocks.forEach(function (block) {
+        var paragraphs = block.paragraphs;
+        var paragraphString = '';
+        paragraphs.forEach(function (paragraph) {
+            //paragraphString += paragraph.boundingBox.vertices[0].x + "\n";
+            var words = paragraph.words;
+            var wordString = '';
+            words.forEach(function (word) {
+                var symbols = word.symbols;
+                var symbolString = '';
+                symbols.forEach(function (symbol) {
+                    symbolString += symbol.text;
+                });
+                wordString += symbolString + " ";
+            });
+            if ((paragraph.boundingBox.vertices[0].x/width) < 0.1){
+                paragraphString += "FRIEND: "
+            } else {
+                paragraphString += "ME: "
+            }
+            paragraphString += wordString + " ";
+        });
+        blockString += paragraphString + "\n" ;
+    });
+    totalString += blockString + "\n\n"
+
+    console.log(totalString);
+      //labels.forEach(text => console.log(text));
     })
     .catch(err => {
       console.error('ERROR:', err);

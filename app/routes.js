@@ -1,10 +1,12 @@
 module.exports = function (app, upload, cloudinary) {
+    path = require ('path');
      // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        res.render('index.ejs');
+     res.sendFile(path.join(__dirname, '', 'index.html'));
     });
+
     //------------------------------------------------------
     //Upload
     //------------------------------------------------------
@@ -22,7 +24,7 @@ module.exports = function (app, upload, cloudinary) {
                 if (error) {
                     console.log("error ocurred", error);
                 } else {
-                    saveSquirrelPic(result);
+                    //saveSquirrelPic(result);
                     console.log(result);
                 }
             }
