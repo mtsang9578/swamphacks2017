@@ -8,3 +8,8 @@ var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+
+var image-detection = require('./image-detection');
+var word-detection = require('./word-detection');
+
+require('./app/routes.js')(app);
