@@ -2,89 +2,6 @@ body {
   background-image: url(city2.gif);
 
 }
-
-h1 {
-  font-size: 80px;
-  text-align: center;
-  color: #131936;
-  font-weight: 10;
-  font-family: "Pacifico", cursive;
-}
-
-h3 {
-  font-size: 30px;
-  text-align: center;
-  color: #131936;
-  font-weight: 10;
-  font-family: "Kalam", cursive;
-}
-
-h5 {
-  font-size: 18px;
-  text-align: center;
-  color: #3E3E3E;
-  font-weight: 10;
-  font-family: "Delius", cursive;
-}
-
-button {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 30px 30px;
-  font-size: 30;
-  border-radius: 20px;
-  border: 0px;
-}
-
-div {
-  text-align: center;
-}
-
-body .transbox {
-    margin-left: 200px;
-    margin-right: 200px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: rgba(219, 219, 219, 0.85);
-    border: 0px solid black;
-    z-index:1;
-    position: static;
-    align-content:center;
-    border-radius: 50px;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    font-size: 25;
-    font-family: "Short Stack", cursive;
-}
-
-li {
-  float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: left;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: #131936;
-}
-
-li a:hover:not(.active) {
-    background-color: rgba(175, 215, 255, 0.60);
-}
-
-.dropbtn {
-  color: black;
-}
-
 .background{
   background-image: url(city2.gif);
   background-repeat: no-repeat;
@@ -115,8 +32,89 @@ li a:hover:not(.active) {
   height: 300px;
 }
 
+h1 {
+  font-size: 80px;
+  text-align: center;
+  color: #131936;
+  font-weight: 10;
+  font-family: "Pacifico", cursive;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #131936;
+  font-weight: 10;
+  font-family: "Kalam", cursive;
+}
+
+h5 {
+  font-size: 15px;
+  text-align: center;
+  color: #3E3E3E;
+  font-weight: 10;
+  font-family: "Delius", cursive;
+}
+
+button {
+  background-color: #8F527A;
+  font-family: "Delius", cursive;
+  padding: 30px 30px;
+  font-size: 30;
+  border-radius: 20px;
+  border: 0px
+}
+
+div {
+  text-align: center;
+}
+
+.dropbtn {
+  color: black;
+}
+
 .profile {
   position: fixed;
+}
+
+body .transbox {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(219, 219, 219, 0.85);
+    border: 0px solid black;
+    z-index:1;
+    position: static;
+    border-radius: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    font-size: 25;
+    font-family: "Short Stack", cursive;
+}
+
+li {
+  float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #131936;
+}
+
+li a:hover:not(.active) {
+    background-color: rgba(175, 215, 255, 0.60);
 }
 
 .helloUser {
@@ -150,55 +148,4 @@ li a:hover:not(.active) {
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-.submit {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 18px 18px;
-  font-size: 20;
-  border-radius: 20px;
-  border: 0px;
-}
-
-.chooseFile {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 20px 20px;
-  font-size: 20;
-  border-radius: 20px;
-  border: 0px;
-}
-
-.email {
-  font-family: "Delius", cursive;
-  font-size: 20;
-}
-
-.password {
-  font-family: "Delius", cursive;
-  font-size: 20;
-}
-
-.form-control {
-  min-height: 15px;
-}
-
-body .login {
-  text-align: center;
-  height: 250px;
-  width: 400px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: rgba(219, 219, 219, 0.85);
-  border: 0px solid black;
-  z-index:1;
-  position: static;
-  align-content:center;
-  border-radius: 50px;
-}
-
-div .together {
-  display: flex;
-  justify-content: center;
 }
