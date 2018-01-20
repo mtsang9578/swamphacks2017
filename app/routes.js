@@ -9,12 +9,26 @@ module.exports = function (app, upload, cloudinary, passport) {
      res.render('index.ejs');
     });
 
+
+var User = require ('./models/user.js');
     // =====================================
     // Index
     // =====================================
    app.get('/index.html', function(req, res) {
-     res.render('index.ejs');
+
+    console.log(req.user);
+    var user = req.user;
+    user.local.email = 'hello@gmail.com';
+
+    var query = {'_id' : req.user._id};
+    User.findOneAndUpdate(query, user, {upsert:true}, function(err, doc) {
+        if (err) {
+            res.send(500, { error: err });
+        }
+    res.render('index.ejs');
     });
+  });
+
 
    // =====================================
     // Index1
@@ -94,7 +108,7 @@ module.exports = function (app, upload, cloudinary, passport) {
      res.render('uploadPage.ejs');
     });
 
-
+//----------------------------UPLOAD----------------------------------------
 
     // =====================================
     // Upload
@@ -121,6 +135,7 @@ module.exports = function (app, upload, cloudinary, passport) {
                     }
                     if (i === req.files.length) {
                         console.log(uploadedFiles);
+                        console.log(req.user);
                     }
                 }
             );
@@ -172,7 +187,7 @@ module.exports = function (app, upload, cloudinary, passport) {
      res.sendFile(path.join(__dirname, '/resources', 'text.css'));
     });
 
- // =====================================
+    // =====================================
     // LOGIN ===============================
     // =====================================
     // show the login form
@@ -218,7 +233,7 @@ module.exports = function (app, upload, cloudinary, passport) {
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
+        successRedirect : '/loginHome', // redirect to the secure profile section
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
