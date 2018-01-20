@@ -1,6 +1,5 @@
 body {
-  background-color: #EDEDED;
-  font-family: "Helvetica Neue";
+  background-image: url(city2.gif);
 }
 
 h1 {
@@ -8,6 +7,7 @@ h1 {
   text-align: center;
   color: #131936;
   font-weight: 10;
+  font-family: "Pacifico", cursive;
 }
 
 h3 {
@@ -15,6 +15,7 @@ h3 {
   text-align: center;
   color: #131936;
   font-weight: 10;
+  font-family: "Kalam", cursive;
 }
 
 h5 {
@@ -22,19 +23,96 @@ h5 {
   text-align: center;
   color: #3E3E3E;
   font-weight: 10;
+  font-family: "Delius", cursive;
 }
 
 button {
-  background-color: #EDEDED;
+  background-color: #8F527A;
+  font-family: "Delius", cursive;
+  padding: 30px 30px;
+  font-size: 30;
+  border-radius: 20px;
+  border: 0px
 }
 
 div {
   text-align: center;
 }
+
 .dropbtn {
   color: black;
 }
 
 .profile {
   position: fixed;
+}
+
+body .transbox {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(219, 219, 219, 0.85);
+    border: 0px solid black;
+    z-index:1;
+    position: static;
+    align-content:center;
+    border-radius: 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    font-size: 25;
+    font-family: "Short Stack", cursive;
+}
+
+li {
+  float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #131936;
+}
+
+li a:hover:not(.active) {
+    background-color: rgba(175, 215, 255, 0.60);
+}
+
+.helloUser {
+  font-size: 100px;
+  margin-top: 50px;
+  font-family: "Pacifico", cursive;
+}
+
+.user {
+  margin-top: 14px;
+  margin-right: 14px;
+}
+
+.info {
+  font-family: "Delius", cursive;
+  font-size: 18;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.infoHeader {
+  font-family: "Kalam", cursive;
+  font-size: 30;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.open {
+  font-size: 100;
 }
