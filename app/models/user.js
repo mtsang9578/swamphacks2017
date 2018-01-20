@@ -27,7 +27,15 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
-    }
+    },
+
+    ScreenshotCollections: [
+    {
+        urls: [String],
+        description: String,
+        conversationDate: Date,
+        uploadDate: {type: Date, default: Date.now()},
+    }]
 
 });
 
