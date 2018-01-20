@@ -1,0 +1,284 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"In",
+				"INITITIAL_CAPACITY"
+			],
+			[
+				"Arra",
+				"ArrayListInterface"
+			],
+			[
+				"Ara",
+				"ArrayListInterface"
+			],
+			[
+				"inde",
+				"IndexOutofBoundsException"
+			],
+			[
+				"in",
+				"instance"
+			],
+			[
+				"calc",
+				"calculateAllOpenings"
+			],
+			[
+				"get",
+				"getComment"
+			],
+			[
+				"contains",
+				"containsAll"
+			],
+			[
+				"ad",
+				"addAll"
+			],
+			[
+				"has",
+				"hashCode"
+			],
+			[
+				"is",
+				"isValid"
+			],
+			[
+				"parse",
+				"Parse"
+			],
+			[
+				"img",
+				"img-container"
+			],
+			[
+				"possible",
+				"possibleMoves"
+			],
+			[
+				"exam",
+				"examAvg"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/admin/cs1331/hw6/EmailMessage.java",
+		"/Users/admin/cs1331/hw6/EmailGui.java",
+		"/Users/admin/cs1331/hw6/EmailDb.java",
+		"/Users/admin/cs1332/ArrayList.java",
+		"/Users/admin/Downloads/ChessGame.java",
+		"/Users/admin/cs1331/hw6/ChessGame.java",
+		"/Users/admin/cs1331/hw6/ChessGui.java",
+		"/Users/admin/cs1331/hw6/ChessDb.java",
+		"/Users/admin/cs1331/hw6/PgnReader.java",
+		"/Users/admin/cs1331/hw6/PGNTest.java",
+		"/Users/admin/cs1331/hw1/PGNReader7.java",
+		"/Users/admin/cs1331/hw6/ChessDb2.java",
+		"/Users/admin/cs1331/hw6/GiuocoPiano.pgn",
+		"/Users/admin/Downloads/html5up-hyperspace/index.html",
+		"/Users/admin/animal-go-server-code/test.html",
+		"/Users/admin/cs1331/ExceptionsPractice/Guess.java",
+		"/Users/admin/animal-go-server-code/parse-server-example/index.js",
+		"/Users/admin/WebDev/Home.html",
+		"/Users/admin/cs1331/hw2/King.java",
+		"/Users/admin/cs1331/hw2/Pawn.java",
+		"/Users/admin/cs1331/hw2/Rook.java",
+		"/Users/admin/cs1331/hw2/Bishop.java",
+		"/Users/admin/cs1331/hw2/Knight.java",
+		"/Users/admin/cs1331/hw2/Queen.java",
+		"/Users/admin/cs1331/hw2/Tester.java",
+		"/Users/admin/cs1331/hw2/Square.java",
+		"/Users/admin/cs1331/hw2/Piece.java",
+		"/Users/admin/cs1331/hw2/test2Practice.java",
+		"/Users/admin/cs1331/hw2/Color.java",
+		"/Users/admin/cs1331/hw2/KingTest.java",
+		"/Users/admin/cs1331/hw2/KnightTest.java",
+		"/Users/admin/cs1331/hw2/QueenTest.java",
+		"/Users/admin/cs1331/hw2/test.java",
+		"/Users/admin/.bash_profile",
+		"/Users/admin/cs1331/hw1/PgnReader.java",
+		"/Users/admin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/admin/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/admin/bin/checkstyle",
+		"/Users/admin/cs1331/ArrayFun.java",
+		"/Users/admin/cs1331/StringFun.java",
+		"/Users/admin/cs1331/hw0/hw0-output.txt",
+		"/Users/admin/cs1331/hw0/Schools.java",
+		"/Users/admin/cs1331/hw0/NimblyBimbly.java",
+		"/Users/admin/cs1331/hw0/FinalTarget.java"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"viewButton",
+			"System",
+			"msg",
+			"System",
+			"NOT GIVEN",
+			"not",
+			"giucoP",
+			"start",
+			"file",
+			"emails",
+			"EmailMessage",
+			"emailDb"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"NA",
+			"games",
+			"ChessGame",
+			"chessDb"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "server.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
