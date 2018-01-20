@@ -17,6 +17,10 @@ h3 {
   font-family: "Kalam", cursive;
 }
 
+h5 .special {
+  text-align: left;
+}
+
 h5 {
   font-size: 18px;
   text-align: center;
