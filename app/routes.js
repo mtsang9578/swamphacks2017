@@ -80,6 +80,21 @@ module.exports = function (app, upload, cloudinary) {
      res.render('loginPage.ejs');
     });
 
+    // =====================================
+    // uploadAnalysis
+    // =====================================
+   app.get('/uploadedAnalysis.html', function(req, res) {
+     res.render('uploadedAnalysis.ejs');
+    });
+
+    // =====================================
+    // upload page
+    // =====================================
+   app.get('/uploadPage.html', function(req, res) {
+     res.render('uploadPage.ejs');
+    });
+
+
 
     // =====================================
     // Upload
