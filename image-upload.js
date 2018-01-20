@@ -1,3 +1,4 @@
+
 module.exports = function (app) {
 
 
@@ -20,4 +21,3 @@ cloudinary.config({
     api_secret: 'uo3KFpPvQPCGfavJrbafo9Sntzs'
 })
 require('./app/routes.js')(app, upload, cloudinary);
-}
