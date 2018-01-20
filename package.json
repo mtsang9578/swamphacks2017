@@ -1,0 +1,23 @@
+{
+  "name": "swamphacks2017",
+  "version": "1.0.0",
+  "description": "a humanitarian app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtsang9578/swamphacks2017.git"
+  },
+  "keywords": [
+    "humanitarianism"
+  ],
+  "author": "Mya, Peter, Kimberly, Mary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtsang9578/swamphacks2017/issues"
+  },
+  "homepage": "https://github.com/mtsang9578/swamphacks2017#readme"
+}
