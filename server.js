@@ -9,7 +9,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var image-detection = require('./image-detection');
-var word-detection = require('./word-detection');
+var imageUpload = require('./image-upload');
+var emotionDetection = require('./emotion-detection');
 
 require('./app/routes.js')(app);
+
+var sampleText = "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.";
+emotionDetection.emotionResponce(sampleText, function(response) {
+	console.log(JSON.stringify(response, null, 2));
+});
+
