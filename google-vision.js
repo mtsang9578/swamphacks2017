@@ -15,7 +15,7 @@ module.exports = {
 
   // Performs label detection on the local file
   client
-    .documentTextDetection(fileNameConst)
+    .documentTextDetection(fileName)
     .then(results => {
       const labels = results[0].fullTextAnnotation;
 

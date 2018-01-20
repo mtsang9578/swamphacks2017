@@ -30,9 +30,9 @@
     <h3>Upload Images</h3>
     <h5>Upload pictures for analysis, and we will give you suggestions as to what you should do!</h5>
     <p>
-      <form action="/upload" method= "post">
+      <form action="/upload" method= "post" enctype="multipart/form-data">
         <br>
-        <input class="chooseFile" type="file" name="img" multiple>
+        <input class="chooseFile" type="file" name="files" multiple>
         <input class="submit" type="submit" name="file-to-upload">
       </form>
     </p>
