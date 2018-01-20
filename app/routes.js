@@ -1,3 +1,4 @@
+var analysis = require ('./process-screenshots.js');
 module.exports = function (app, upload, cloudinary, passport) {
     path = require ('path');
 
@@ -137,7 +138,6 @@ var User = require ('./models/user.js');
                         uploadedFiles.push(result.url);
                     } if (i === req.files.length) {
                         //First perform analysis
-                        var analysis = require ('./process-screenshots.js');
                         analysis.concentrateText(uploadedFiles, function(json) {
 
                             //Once finished, save the url's to the database;
@@ -150,11 +150,9 @@ var User = require ('./models/user.js');
                             var query = {'_id' : req.user._id};
                             User.findOneAndUpdate(query, req.user, {upsert:true}, function(err, doc) {
                                 if (err) res.send(500, { error: err });
-                                res.render('analysis.ejs', );
+                                res.render('analysis.ejs');
                             });
                         });
-
-
                     }
                 });
                 //fs.unlink(req.file.path, function(err, result) {if(err) console.log(err)});

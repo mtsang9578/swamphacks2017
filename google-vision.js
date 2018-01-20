@@ -7,7 +7,7 @@ const client = new vision.ImageAnnotatorClient({
 });
 const fileNameConst = "./text1.jpg";
 module.exports = {
-  detectLabels : function (fileName) {
+  detectLabels : function (fileName, callback) {
   /**
    * TODO(developer): Uncomment the following line before running the sample.
    */
@@ -50,6 +50,7 @@ module.exports = {
     totalString += blockString + "\n\n"
 
     console.log(totalString);
+    callback(totalString);
       //labels.forEach(text => console.log(text));
     })
     .catch(err => {
