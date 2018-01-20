@@ -2,35 +2,6 @@ body {
   background-image: url(city2.gif);
 
 }
-.background{
-  background-image: url(city2.gif);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: gray;
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-.static {
-  position: fixed;
-  width: 99%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.static2 {
-  position: relative;
-  height: 85%;
-  overflow-y: scroll;
-  display: block;
-  margin-top: 100px;
-}
-
-.moving {
-  height: 300px;
-}
 
 h1 {
   font-size: 80px;
@@ -67,14 +38,6 @@ button {
 
 div {
   text-align: center;
-}
-
-.dropbtn {
-  color: black;
-}
-
-.profile {
-  position: fixed;
 }
 
 body .transbox {
@@ -116,6 +79,44 @@ li a {
 
 li a:hover:not(.active) {
     background-color: rgba(175, 215, 255, 0.60);
+}
+
+.dropbtn {
+  color: black;
+}
+
+.background{
+  background-image: url(city2.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.static {
+  position: fixed;
+  width: 99%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.static2 {
+  position: relative;
+  height: 85%;
+  overflow-y: scroll;
+  display: block;
+  margin-top: 100px;
+}
+
+.moving {
+  height: 300px;
+}
+
+.profile {
+  position: fixed;
 }
 
 .helloUser {
@@ -167,4 +168,37 @@ li a:hover:not(.active) {
   font-size: 20;
   border-radius: 20px;
   border: 0px;
+}
+
+.email {
+  font-family: "Delius", cursive;
+  font-size: 20;
+}
+
+.password {
+  font-family: "Delius", cursive;
+  font-size: 20;
+}
+
+.form-control {
+  min-height: 15px;
+}
+
+body .login {
+  text-align: center;
+  height: 250px;
+  width: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(219, 219, 219, 0.85);
+  border: 0px solid black;
+  z-index:1;
+  position: static;
+  align-content:center;
+  border-radius: 50px;
+}
+
+div .together {
+  display: flex;
+  justify-content: center;
 }
