@@ -29,12 +29,13 @@ var userSchema = mongoose.Schema({
         name         : String
     },
 
-    ScreenshotCollections: [
+    screenshotCollections: [
     {
         urls: [String],
         description: String,
         conversationDate: Date,
         uploadDate: {type: Date, default: Date.now()},
+        analysis: Object
     }]
 
 });
