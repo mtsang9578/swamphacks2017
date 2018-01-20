@@ -108,5 +108,49 @@ module.exports = function (app, upload, cloudinary) {
 
 //----------------------------RESOURCES----------------------------------------
 
+    // =====================================
+    // Login Page
+    // =====================================
+   app.get('/resources/city.gif', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'city.gif'));
+    });
+
+    // =====================================
+    // Login Page
+    // =====================================
+   app.get('/resources/city2.gif', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'city2.gif'));
+    });
+
+    // =====================================
+    // Login Page
+    // =====================================
+   app.get('/resources/FemaleIcon.png', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'FemaleIcon.png'));
+    });
+
+    // =====================================
+    // HomeIcon.png
+    // =====================================
+   app.get('/resources/HomeIcon.png', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'HomeIcon.png'));
+    });
+
+    // =====================================
+    // MaleIcon.png
+    // =====================================
+   app.get('/resources/MaleIcon.png', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'MaleIcon.png'));
+    });
+
+    // =====================================
+    // Text.css
+    // =====================================
+   app.get('/resources/text.css', function(req, res) {
+     res.sendFile(path.join(__dirname, '/resources', 'text.css'));
+    });
+
+
+
 
 }
