@@ -9,7 +9,9 @@ let storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         console.log(file);
-       cb(null, req.body.filename + '_' + Date.now());
+
+       cb(null, Date.now() + "." + file.mimetype.split('/')[1]);
+
     }
 });
 
@@ -22,5 +24,4 @@ cloudinary.config({
     api_key: '489781664195457',
     api_secret: 'uo3KFpPvQPCGfavJrbafo9Sntzs'
 });
-require('./app/routes.js')(app, upload, cloudinary);
 }
