@@ -1,15 +1,12 @@
 var express = require ('express');
 var app = express();
-var port = process.env.PORT || 8080;
 var mongoose = require('mongoose');
 var passport = require('passport');
 
 var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-
-var imageUpload = require('./image-upload');
+var imageUpload = require('./image-upload')(app);
 var emotionDetection = require('./emotion-detection');
 
 require('./app/routes.js')(app);
@@ -18,4 +15,10 @@ var sampleText = "IBM is an American multinational technology company headquarte
 emotionDetection.emotionResponce(sampleText, function(response) {
 	console.log(JSON.stringify(response, null, 2));
 });
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.set('view engine', 'ejs');
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log("the app is listening on port " + port);
 
