@@ -1,4 +1,5 @@
 var analysis = require ('./process-screenshots.js');
+var emotionAnalysis = require('../emotion-detection.js');
 module.exports = function (app, upload, cloudinary, passport) {
     path = require ('path');
 
@@ -138,13 +139,16 @@ var User = require ('./models/user.js');
                         uploadedFiles.push(result.url);
                     } if (i === req.files.length) {
                         //First perform analysis
+                        console.log("about to call concentrateText")
                         analysis.concentrateText(uploadedFiles, function(json) {
-
+                            console.log("concentrateText called")
                             //Once finished, save the url's to the database;
+                            var avgAnalysis = emotionAnalysis.aggregateWatsonData_average_topThree(json);
                             req.user.screenshotCollections.push({
                                 'urls' : uploadedFiles,
                                 'description' : " ",
-                                'analysis' : json
+                                'analysis' : json,
+                                'averageAnalysis': avgAnalysis
                             });
 
                             var query = {'_id' : req.user._id};

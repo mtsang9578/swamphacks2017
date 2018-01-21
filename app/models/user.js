@@ -35,7 +35,8 @@ var userSchema = mongoose.Schema({
         description: String,
         conversationDate: Date,
         uploadDate: {type: Date, default: Date.now()},
-        analysis: Object
+        analysis: Object,
+        averageAnalysis: Object
     }]
 
 });
