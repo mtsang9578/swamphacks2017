@@ -1,0 +1,59 @@
+<!-- After login. After updates. Analysis -->
+
+<html>
+
+
+<!-- Header -->
+
+<head>
+  <title>Depression</title>
+  <link type="text/css" rel="stylesheet" href="resources/text.css">
+  <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
+</head>
+
+<!-- Body -->
+
+<body>
+<div class="background">
+  <div class="static">
+    <ul>
+      <li>
+        <a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
+      </li>
+      <li><a href="status.html">Status</a> </li>
+      <li><a href="uploadPage.html">Update</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="index2.html">Site Info</a></li>
+      <li style="float:right" class="user"><a>Welcome, User</a></li>
+    </ul>
+  </div>
+
+
+
+  <!-- Content -->
+  <div class="static2">
+    <div class="moving">
+      <h1>Analysis</h1>
+      <section class="transbox">
+        <p class="info"><b><i><%= username%> </i></b></p>
+        <img style='max-height:50%' src=<%= imgURL  %> >
+        <br>
+        <br>
+        <br>
+          <h3>
+          <div align=center>Details: </div>
+            <b>Joy Expressed: </b>
+            <%=imgData.joy%>
+            <br><b>Sadness Expressed: </b>
+            <%=imgData.sorrow%>
+            <br><b>Surprise Expressed:</b>
+            <%=imgData.surprise%>
+            <br><b>Anger Expressed:</b>
+            <%=imgData.anger%>
+            </h3>
+
+        <!-- Footer -->
+      </section>
+    </div>
+  </div>
+</body>

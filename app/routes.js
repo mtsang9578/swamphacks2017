@@ -19,19 +19,8 @@ var User = require ('./models/user.js');
     // Index
     // =====================================
    app.get('/index.html', isLoggedIn, function(req, res) {
-
-    console.log(req.user);
-    var user = req.user;
-    user.local.email = 'hello@gmail.com';
-
-    var query = {'_id' : req.user._id};
-    User.findOneAndUpdate(query, user, {upsert:true}, function(err, doc) {
-        if (err) {
-            res.send(500, { error: err });
-        }
     res.render('index.ejs');
     });
-  });
 
 
    // =====================================
@@ -109,7 +98,7 @@ var User = require ('./models/user.js');
     // upload page
     // =====================================
    app.get('/uploadPage.html', isLoggedIn, function(req, res) {
-     res.render('uploadPage.ejs');
+     res.render('uploadPage.ejs', {instagram:false, userid: null, follows: []});
     });
 
 
@@ -171,7 +160,6 @@ var User = require ('./models/user.js');
                             });
 
                             var analysisData = req.user.screenshotCollections[req.user.screenshotCollections.length-1];
-
                             var query = {'_id' : req.user._id};
                             User.findOneAndUpdate(query, req.user, {upsert:true}, function(err, doc) {
                                 if (err) res.send(500, { error: err });
@@ -186,9 +174,12 @@ var User = require ('./models/user.js');
 
 
         //GENERATES AN ANALYSIS USING GOOGLE VISION STUFF
-
-
-
+    });
+    app.post('/uploadInsta', isLoggedIn,  function (req, res) {
+        var imageData = JSON.parse(req.body.stringifedFaceJSON);
+        var imgURL = req.body.instagramPicUrl;
+        var userName2 = req.body.usernameToSearch;
+        res.render('uploadAnalysisInsta.ejs', {'imgData': imageData, 'imgURL': imgURL, 'username': userName2});
     });
 
 
@@ -355,15 +346,23 @@ exports.handleauth = function(req, res) {
             // console.log("worked!");
             users.forEach(function(follows){
                 var followerId = follows.id;
+                follows.posts = [];
                 api.user_media_recent(followerId, function(err, medias, pagination, remaining, limit) {
                     medias.forEach(function(media) {
+                        follows.posts.push(media);
                         var imageURLToScan = media.images.standard_resolution.url;
-                        console.log(imageURLToScan);
-                googleVision.detectFaceExpression(imageURLToScan);
+                        googleVision.detectFaceExpression(imageURLToScan, function(faces) {
+                            var fData = {
+                                "joy": faces[0].joyLikelihood,
+                                "anger": faces[0].angerLikelihood,
+                                "sorrow": faces[0].sorrowLikelihood,
+                                "surprise": faces[0].surpriseLikelihood
+                            }
+                            res.render('instaUploadAuthed.ejs', {instagram:true, userid: userId, follows: users, imgUrl: imageURLToScan, faceData : JSON.stringify(fData)});
+                        });
                     });
                 });
             });
-            res.render('$loggedInInstragramPage');
             }
         // users.forEach(function(user){
         //  api.user_media_recent(user.id, function(err, medias, pagination, remaining, limit) {
@@ -374,3 +373,19 @@ exports.handleauth = function(req, res) {
     }
   });
 };
+// ------------------------ twitter --------------------------------------------
+var Twitter = require('twitter');
+ 
+var client = new Twitter({
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
+});
+ 
+var params = {screen_name: 'nodejs'};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  if (!error) {
+    console.log(tweets);
+  }
+});
