@@ -37,7 +37,7 @@
       <section class="transbox">
         <p class="info"><b><i>(Date)</i></b></p>
           <% urls.forEach(function(url) {%>
-        <img class="pics" src=< %=url %> >
+        <img class="pics" src=<%= url %> >
           <%});%>
 
         <br>
@@ -50,7 +50,7 @@
             <br>
             <b>Joy:</b>
             <br>
-            <progress value=< %=averageAnalysis.joyAverage * 100%> max="100"></progress>
+            <progress value=<%=averageAnalysis.joyAverage * 100%> max="100"></progress>
             <br><b>Sadness:</b>
             <br>
             <progress value=<%=averageAnalysis.sadnessAverage * 100%> max="100"></progress>
