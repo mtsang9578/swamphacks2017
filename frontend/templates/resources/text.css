@@ -48,6 +48,7 @@ body .transbox {
     z-index: 1;
     position: static;
     border-radius: 50px;
+    overflow-x: hidden;
 }
 
 ul {
@@ -265,4 +266,8 @@ div .together {
 
 .date-input {
     font-size: 20px;
+}
+
+.status-image {
+    width: 30%;
 }
