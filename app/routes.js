@@ -1,5 +1,7 @@
 var analysis = require ('./process-screenshots.js');
 var emotionAnalysis = require('../emotion-detection.js');
+var googleVision = require('../google-vision');
+var api = require('instagram-node').instagram();
 module.exports = function (app, upload, cloudinary, passport) {
     path = require ('path');
 
@@ -16,7 +18,7 @@ var User = require ('./models/user.js');
     // =====================================
     // Index
     // =====================================
-   app.get('/index.html', function(req, res) {
+   app.get('/index.html', isLoggedIn, function(req, res) {
 
     console.log(req.user);
     var user = req.user;
@@ -42,14 +44,14 @@ var User = require ('./models/user.js');
     // =====================================
     // Index2
     // =====================================
-   app.get('/index2.html', function(req, res) {
+   app.get('/index2.html', isLoggedIn, function(req, res) {
      res.render('index2.ejs');
     });
 
     // =====================================
     // Index3
     // =====================================
-   app.get('/index3.html', function(req, res) {
+   app.get('/index3.html', isLoggedIn, function(req, res) {
      res.render('index3.ejs');
     });
 
@@ -64,28 +66,28 @@ var User = require ('./models/user.js');
     // =====================================
     // Login Page
     // =====================================
-   app.get('/loginPage.html', function(req, res) {
+   app.get('/loginPage.html', isLoggedIn, function(req, res) {
      res.render('loginPage.ejs');
     });
 
     // =====================================
     // Resources
     // =====================================
-   app.get('/resources.html', function(req, res) {
+   app.get('/resources.html', isLoggedIn, function(req, res) {
      res.render('resources.ejs');
     });
 
     // =====================================
     // Resources2
     // =====================================
-   app.get('/resources2.html', function(req, res) {
+   app.get('/resources2.html', isLoggedIn, function(req, res) {
      res.render('resources2.ejs');
     });
 
     // =====================================
     // Status
     // =====================================
-   app.get('/status.html', function(req, res) {
+   app.get('/status.html',isLoggedIn, function(req, res) {
      res.render('status.ejs');
     });
 
@@ -99,14 +101,14 @@ var User = require ('./models/user.js');
     // =====================================
     // uploadAnalysis
     // =====================================
-   app.get('/uploadedAnalysis.html', function(req, res) {
+   app.get('/uploadedAnalysis.html', isLoggedIn, function(req, res) {
      res.render('uploadedAnalysis.ejs');
     });
 
     // =====================================
     // upload page
     // =====================================
-   app.get('/uploadPage.html', function(req, res) {
+   app.get('/uploadPage.html', isLoggedIn, function(req, res) {
      res.render('uploadPage.ejs');
     });
 
@@ -121,7 +123,7 @@ var User = require ('./models/user.js');
    // =====================================
     // Analysis
     // =====================================
-   app.get('/uploadedAnalysis.html', function(req, res) {
+   app.get('/uploadedAnalysis.html', isLoggedIn, function(req, res) {
      res.render('uploadAnalysis.ejs');
     });
 
@@ -132,7 +134,7 @@ var User = require ('./models/user.js');
     // =====================================
     // Upload
     // =====================================
-    app.post('/upload', upload.array('files'), function (req, res) {
+    app.post('/upload', isLoggedIn, upload.array('files'), function (req, res) {
         var uploadedFiles = [];
         //Make sure the input name is file-to-upload
         //fs.rename(req.file.path, 'upload'/req.body.filename);
@@ -159,11 +161,13 @@ var User = require ('./models/user.js');
                             console.log("concentrateText called")
                             //Once finished, save the url's to the database;
                             var avgAnalysis = emotionAnalysis.aggregateWatsonData_average_topThree(json);
+                            var diagnosis = emotionAnalysis.calculateResponse(avgAnalysis);
                             req.user.screenshotCollections.push({
                                 'urls' : uploadedFiles,
                                 'description' : " ",
                                 'analysis' : json,
-                                'averageAnalysis': avgAnalysis
+                                'averageAnalysis': avgAnalysis,
+                                'diagnosis' : diagnosis
                             });
 
                             var analysisData = req.user.screenshotCollections[req.user.screenshotCollections.length-1];
@@ -230,7 +234,7 @@ var User = require ('./models/user.js');
     // =====================================
     // Text.css
     // =====================================
-   app.get('/resources/text.css', function(req, res) {
+   app.get('/resources/text.css',  function(req, res) {
      res.sendFile(path.join(__dirname, '/resources', 'text.css'));
     });
 
@@ -291,6 +295,11 @@ var User = require ('./models/user.js');
         });
     });
 
+// ----------------------------instragram redirects -------------------------
+    // This is where you would initially send users to authorize 
+    app.get('/authorize_user', exports.authorize_user);
+    // This is your redirect URI 
+    app.get('/handleauth', exports.handleauth);
 };
 
 // route middleware to make sure a user is logged in
@@ -304,4 +313,64 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
+//---------------------------------Instragram------------------------------------------
+api.use({ client_id: '775a7679ca7149be98d1d2cf6774483d',
+         client_secret: '15217d963f3a4bdfa0d11fda8c2c9fb8' });
 
+var redirect_uri = 'http://localhost:8080/handleauth';
+
+exports.authorize_user = function(req, res) {
+    api.use({ client_id: '775a7679ca7149be98d1d2cf6774483d',
+         client_secret: '15217d963f3a4bdfa0d11fda8c2c9fb8' });
+  res.redirect(api.get_authorization_url(redirect_uri, { scope: ['likes','public_content', 'follower_list'], state: 'a state' }));
+};
+
+exports.handleauth = function(req, res) {
+  api.authorize_user(req.query.code, redirect_uri, function(err, result) {
+    if (err) {
+      console.log(err.body);
+      res.send("Didn't work");
+    } else {
+      console.log('Yay! Access token is ' + result.access_token);
+      userId = result.user.id;
+      console.log("UserId: " + userId);
+      var access_token_toUse = result.access_token;
+      // console.log("User data: " + result.user);
+      if (!api.access_token){
+        console.log("did not accessed token!");
+      }
+      api.use({ client_id: '775a7679ca7149be98d1d2cf6774483d',
+         client_secret: '15217d963f3a4bdfa0d11fda8c2c9fb8' ,
+         access_token: access_token_toUse});
+      if (api.access_token){
+        console.log("accessed token!");
+      }
+      // api.user(userId, function(err, result, remaining, limit){
+      //    console.log(result);
+      // });
+      api.user_follows(userId, function(err, users, pagination, remaining, limit) {
+        if (err) {
+            res.send(err);
+        } else {
+            // console.log("worked!");
+            users.forEach(function(follows){
+                var followerId = follows.id;
+                api.user_media_recent(followerId, function(err, medias, pagination, remaining, limit) {
+                    medias.forEach(function(media) {
+                        var imageURLToScan = media.images.standard_resolution.url;
+                        console.log(imageURLToScan);
+                googleVision.detectFaceExpression(imageURLToScan);
+                    });
+                });
+            });
+            res.render('$loggedInInstragramPage');
+            }
+        // users.forEach(function(user){
+        //  api.user_media_recent(user.id, function(err, medias, pagination, remaining, limit) {
+        //      console.log(medias[0]);
+        //  });
+        // });
+      });
+    }
+  });
+};

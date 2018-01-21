@@ -39,11 +39,8 @@ module.exports = {
                 wordString += symbolString + " ";
             });
             if ((paragraph.boundingBox.vertices[0].x/width) < 0.1){
-                paragraphString += "FRIEND: "
-            } else {
-                paragraphString += "ME: "
-            }
-            paragraphString += wordString + " ";
+              paragraphString += wordString + " ";
+            } 
         });
         blockString += paragraphString + "\n" ;
     });
