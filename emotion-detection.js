@@ -44,6 +44,7 @@ module.exports = {
 		});
   },
       aggregateWatsonData_average_topThree : function(json) {
+        console.log(json);
         var sadnessSum = 0;
         var joySum = 0;
         var fearSum = 0;
