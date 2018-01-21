@@ -143,7 +143,7 @@ li a:hover:not(.active) {
 
 .keywords-label {
     text-align: center;
-    font-family: "Pacifico", cursive;
+    font-family: "Delius", cursive;
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -160,7 +160,7 @@ li a:hover:not(.active) {
 
 .details-label {
     text-align: center;
-    font-family: "Pacifico", cursive;
+    font-family: "Delius", cursive;
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -255,4 +255,14 @@ div .together {
 
 .diagnosis-label {
     font-size: 32px;
+}
+
+.date-block {
+    font-size: 20px;
+    font-family: "Delius", cursive;
+    margin: 10px;
+}
+
+.date-input {
+    font-size: 20px;
 }
