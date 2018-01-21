@@ -160,17 +160,19 @@ var User = require ('./models/user.js');
                             //Once finished, save the url's to the database;
                             var avgAnalysis = emotionAnalysis.aggregateWatsonData_average_topThree(json);
                             req.user.screenshotCollections.push({
-
                                 'urls' : uploadedFiles,
                                 'description' : " ",
                                 'analysis' : json,
                                 'averageAnalysis': avgAnalysis
                             });
 
+                            var analysisData = req.user.screenshotCollections[req.user.screenshotCollections.length-1];
+
                             var query = {'_id' : req.user._id};
                             User.findOneAndUpdate(query, req.user, {upsert:true}, function(err, doc) {
                                 if (err) res.send(500, { error: err });
-                                res.render('uploadAnalysis.ejs', analyzedData[analyzedData.length]);
+                                console.log(analysisData);
+                                res.render('uploadAnalysis.ejs', analysisData);
                             });
                         });
                     }
