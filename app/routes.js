@@ -109,6 +109,21 @@ var User = require ('./models/user.js');
      res.render('uploadPage.ejs');
     });
 
+
+    // =====================================
+    // Login Home
+    // =====================================
+   app.get('/loginHome.html', function(req, res) {
+     res.render('loginHome.ejs');
+    });
+
+   // =====================================
+    // Analysis
+    // =====================================
+   app.get('/uploadedAnalysis.html', function(req, res) {
+     res.render('uploadAnalysis.ejs');
+    });
+
 //----------------------------UPLOAD----------------------------------------
 
     var googleDetection = require('../google-vision.js');
@@ -141,7 +156,7 @@ var User = require ('./models/user.js');
                         analysis.concentrateText(uploadedFiles, function(json) {
 
                             //Once finished, save the url's to the database;
-                            req.user.screenshotCollections.push({
+                            var analyzedData = req.user.screenshotCollections.push({
                                 'urls' : uploadedFiles,
                                 'description' : " ",
                                 'analysis' : json
@@ -150,7 +165,7 @@ var User = require ('./models/user.js');
                             var query = {'_id' : req.user._id};
                             User.findOneAndUpdate(query, req.user, {upsert:true}, function(err, doc) {
                                 if (err) res.send(500, { error: err });
-                                res.render('analysis.ejs');
+                                res.render('uploadAnalysis.ejs', analyzedData[analyzedData.length]);
                             });
                         });
                     }
@@ -258,7 +273,7 @@ var User = require ('./models/user.js');
 
     // process the login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/loginHome', // redirect to the secure profile section
+        successRedirect : '/loginHome.html', // redirect to the secure profile section
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
