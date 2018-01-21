@@ -73,7 +73,7 @@ module.exports = {
             relevanceSum += keyword.relevance;
             kWords.push(keyword);
         });
-        kWords.sort(sorter);
+        kWords.sort(sorter);  
         var i=0;
         topKeyWords = [];
         while (i < kWords.length && i < 3) {
@@ -81,11 +81,11 @@ module.exports = {
           i++;
         }
         var aggregateResponce = {
-          'sadnessAverage' : (sadnessSum),
-          'joyAverage'     : (joySum),
-          'fearAverage'    : (fearSum),
-          'disgustAverage' : (disgustSum),
-          'angerAverage'   : (angerSum),
+          'sadnessAverage' : (sadnessSum)/(json.keywords.length/3.55),
+          'joyAverage'     : (joySum)/(json.keywords.length/3.55),
+          'fearAverage'    : (fearSum)/(json.keywords.length/3.55),
+          'disgustAverage' : (disgustSum)/(json.keywords.length/3.55),
+          'angerAverage'   : (angerSum)/(json.keywords.length/3.55),
           'topKeyWords'    : topKeyWords
         };
         return aggregateResponce;
@@ -96,7 +96,7 @@ module.exports = {
           var state = "";
           var actions = "";
           var lookOut = "";
-          switch (true) {
+          switch (true) {   
             case (depressionScore> 25 && depressionScore <= 65):
                 state = "Your friend may be in denial about depression.";
                 actions = `Because your friend may be feeling lonely and unproductive, try to encourage a happier environment and support them whenever they are feeling down. If your friend's condition gets worse, encourage a healthier lifestyle because that can induce better feelings.`;

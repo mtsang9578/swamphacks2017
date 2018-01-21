@@ -59,7 +59,7 @@ var User = require ('./models/user.js');
     // =====================================
     // Login Home
     // =====================================
-   app.get('/loginHome.html', function(req, res) {
+   app.get('/loginHome.html',isLoggedIn, function(req, res) {
      res.render('loginHome.ejs');
     });
 
@@ -116,7 +116,7 @@ var User = require ('./models/user.js');
     // =====================================
     // Login Home
     // =====================================
-   app.get('/loginHome.html', function(req, res) {
+   app.get('/loginHome.html',isLoggedIn, function(req, res) {
      res.render('loginHome.ejs');
     });
 
@@ -313,7 +313,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 
-//---------------------------------Instragram------------------------------------------
+//---------------------------------Instagram------------------------------------------
 api.use({ client_id: '775a7679ca7149be98d1d2cf6774483d',
          client_secret: '15217d963f3a4bdfa0d11fda8c2c9fb8' });
 
