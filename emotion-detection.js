@@ -76,7 +76,7 @@ module.exports = {
         kWords.sort(sorter);
         var i=0;
         topKeyWords = [];
-        while (i < kWords.length && i < 3) {
+        while (i < kWords.length && i < 5) {
           topKeyWords.push(kWords[i].text);
           i++;
         }

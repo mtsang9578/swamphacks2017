@@ -86,9 +86,9 @@ li a:hover:not(.active) {
 
 .background {
     background-image: url(city2.gif);
-    background-repeat: no-repeat;
+    background-repeat:repeat-x;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     background-color: gray;
     height: 100%;
     width: 100%;
