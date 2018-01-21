@@ -1,44 +1,53 @@
 <!-- After login. Update page -->
 
 <html>
-  <head>
+
+<head>
     <title>Depression</title>
-    <link type="text/css" rel="stylesheet" href="resources/text.css"></link>
+    <link type="text/css" rel="stylesheet" href="resources/text.css">
     <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
 
-<div class = "background">
+    <div class="background">
 
-<!-- Header -->
+        <!-- Header -->
+        <div class="static">
+            <ul>
+                <li>
+                    <a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
+                </li>
+                <li><a href="status.html">Status</a></li>
+                <li><a href="uploadPage.html">Update</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="index2.html">Site Info</a></li>
+                <li style="float:right" class="user">Welcome, User </li>
+            </ul>
+        </div>
 
-    <div class="static"><ul>
-      <li><a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
-      <li><a href="status.html">Status</a>
-      <li><a href="uploadPage.html">Update</a>
-      <li><a href="resources.html">Resources</a>
-      <li><a href="index2.html">Site Info</a>
-      <li style="float:right" class="user">Welcome, User</a>
-    </div></ul>
+        <!-- Content -->
 
-<!-- Content -->
+        <div class="static2">
+            <div class="moving">
+                <h1>Update</h1>
+                <section class="transbox">
+                    <h3>Upload Images</h3>
+                    <h5>Upload pictures for analysis, and we will give you suggestions as to what you should do!</h5>
 
-    <div class="static2">
-    <div class="moving"><h1>Update</h1>
-    <section class="transbox">
-    <h3>Upload Images</h3>
-    <h5>Upload pictures for analysis, and we will give you suggestions as to what you should do!</h5>
-    <p>
-      <form action="/upload" method= "post" enctype="multipart/form-data">
-        <br>
-        <input class="chooseFile" type="file" name="files" multiple>
-        <input class="submit" type="submit" name="file-to-upload">
-      </form>
-    </p>
-    </div></div>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input class="chooseFile" type="file" name="files" multiple>
+                        <input class="submit" type="submit" name="file-to-upload">
+                        <div class="date-block">
+                            Date:
+                            <input class="date-input" type="date" name="date">
+                        </div>
+                    </form>
+                </section>
+            </div>
 
-<!-- Footer -->
-    </section>
-  </div>
-  </body>
+            <!-- Footer -->
+
+        </div>
+    </div>
+</body>

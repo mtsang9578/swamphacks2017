@@ -6,14 +6,14 @@ h1 {
     font-size: 80px;
     text-align: center;
     color: #131936;
-    font-weight: 10px;
+    font-weight: 10;
     font-family: "Pacifico", cursive;
 }
 
 h3 {
     font-size: 30px;
     color: #131936;
-    font-weight: 10px;
+    font-weight: 10;
     font-family: "Kalam", cursive;
 }
 
@@ -33,7 +33,7 @@ button {
     background-color: #8F527A;
     font-family: "Delius", cursive;
     padding: 30px 30px;
-    font-size: 30px;
+    font-size: 30;
     border-radius: 20px;
     border: 0px;
 }
@@ -48,6 +48,8 @@ body .transbox {
     z-index: 1;
     position: static;
     border-radius: 50px;
+    overflow-x: hidden;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -138,7 +140,8 @@ li a:hover:not(.active) {
 .keywords-block {
     float: left;
     width: 50%;
-    padding: 10px;
+    margin: 10px;
+    display: inline;
 }
 
 .keywords-label {
@@ -146,6 +149,15 @@ li a:hover:not(.active) {
     font-family: "Delius", cursive;
     font-size: 24px;
     margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.keyword {
+    margin:0;
+    width: 100%;
+    margin-bottom:10px;
+    font-size: 20px;
+    text-align:center;
 }
 
 .diagnosis-block {
@@ -155,7 +167,7 @@ li a:hover:not(.active) {
 .details-block {
     float: left;
     width: 50%;
-    padding: 10px;
+    margin:10px;
 }
 
 .details-label {
@@ -163,12 +175,12 @@ li a:hover:not(.active) {
     font-family: "Delius", cursive;
     font-size: 24px;
     margin-bottom: 5px;
+    text-decoration:underline;
 }
-
 
 .info2 {
     font-family: "Delius", cursive;
-    font-size: 18px;
+    font-size: 18;
     text-align: right;
     margin-right: 50px;
     margin-left: 50px;
@@ -246,7 +258,8 @@ div .together {
 }
 
 .pics {
-    max-height: 300px;
+    max-height: 90%;
+    max-width: 30%;
 }
 
 .diagnosis-section {
@@ -257,3 +270,31 @@ div .together {
 .diagnosis-label {
     font-size: 32px;
 }
+
+.date-block {
+    font-size: 20px;
+    font-family: "Delius", cursive;
+    margin: 10px;
+}
+
+.date-input {
+    font-size: 20px;
+}
+
+.status-image {
+    max-width: 30%;
+}
+.status-bar{
+    font-family: "Delius", cursive;
+    width:100%;
+    text-align: center;
+}
+
+progress {
+    width:100%;
+}
+
+hr{
+    margin:10px;
+}
+

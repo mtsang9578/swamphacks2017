@@ -1,55 +1,94 @@
 <!-- After login. Status page -->
 
 <html>
-  <head>
+
+<head>
     <title>Depression</title>
-    <link type="text/css" rel="stylesheet" href="resources/text.css"></link>
+    <link type="text/css" rel="stylesheet" href="resources/text.css">
     <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
+    <div class="background">
+        <!-- Header -->
+        <div class="static">
+            <ul>
+                <li>
+                    <a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
+                </li>
+                <li><a href="status.html">Status</a></li>
+                <li><a href="uploadPage.html">Update</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="index2.html">Site Info</a></li>
+                <li style="float:right" class="user">Welcome, User</li>
+            </ul>
+        </div>
 
-<div class = "background">
+        <!-- Content -->
 
-<!-- Header -->
+        <div class="static2">
+            <div class="moving">
+                <h1>Status</h1>
 
-    <div class="static"><ul>
-      <li><a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
-      <li><a href="status.html">Status</a>
-      <li><a href="uploadPage.html">Update</a>
-      <li><a href="resources.html">Resources</a>
-      <li><a href="index2.html">Site Info</a>
-      <li style="float:right" class="user">Welcome, User</a>
-    </div></ul>
 
-<!-- Content -->
+                <% for (var i = screenshotCollections.length - 1; i>= 0; i--){%>
+                    <section class="transbox">
+                        <p class="info"><b><i><%= (new Date (screenshotCollections[i].conversationDate)).toDateString() %></i></b></p>
+                        <div class="together">
 
-    <div class="static2">
-    <div class="moving"><h1>Status</h1>
-    <section class="transbox">
-      <p class="info"><b><i>(Date)</i></b></p>
-      <div class="together">
-        <img class="pics" src="resources/meme.png">
-        <p class="info">(Currently your analysis is that you need to chill on the memes and that this is a serious website.
-          This is a disgrace to the website, and you should take this image down. I'm jk. ILY bb.)<br><br>
-          <a href="status.html"><button type="button">MORE DETAILS</button></a></p>
-        <p class="info">
-          <b><i>Details:</i></b><br>
-          <b>Joy:</b>
-            <br><progress value="79" max="100"></progress>
-          <br><b>Sadness:</b>
-            <br><progress value="55" max="100"></progress>
-          <br><b>Fear:</b>
-            <br><progress value="22" max="100"></progress>
-          <br><b>Anger:</b>
-            <br><progress value="60" max="100"></progress></div>
-          <br><b>Disgust:</b>
-            <br><progress value="60" max="100"></progress></div>
+                            <img class="pics status-image" src="<%=screenshotCollections[i].urls[0]%>">
 
-          <hr></div>
-    </div></div></div>
+                            <div class="info">
+                                <%= screenshotCollections[i].diagnosis.state %>
+                                    <br>
+                                    <br>
+                                    <form action="/loadAnalysis" method="post">
+                                        <input type="number" value='<%=i%>' style="display:none;" name="index">
+                                        <button type="submit">MORE DETAILS</button>
+                                    </form>
+                            </div>
+
+
+                          <div class="details-block">
+                            <div class="details-label">Details:</div>
+
+
+                            <div class = "status-bar">
+                              <div style="width:100%; text-align: left;"><b>Joy:</b></div>
+                              <progress value=<%=screenshotCollections[i].averageAnalysis.joyAverage * 100%> max="100"></progress>
+                            </div>
+
+
+                            <div class = "status-bar">
+                              <div style="width:100%; text-align: left;"><b>Sadness:</b></div>
+                              <progress value=<%=screenshotCollections[i].averageAnalysis.sadnessAverage * 100%> max="100"></progress>
+                            </div>
+
+
+                            <div class = "status-bar">
+                              <div style="width:100%; text-align: left;"><b>Fear:</b></div>
+                              <progress value=<%=screenshotCollections[i].averageAnalysis.fearAverage * 100%> max="100"></progress>
+                            </div>
+
+
+                            <div class = "status-bar">
+                              <div style="width:100%; text-align: left;"><b>Anger:</b></div>
+                              <progress value=<%=screenshotCollections[i].averageAnalysis.angerAverage * 100%> max="100"></progress>
+                            </div>
+
+
+                            <div class = "status-bar">
+                              <div style="width:100%; text-align: left;"><b>Disgust:</b></div>
+                              <progress value=<%=screenshotCollections[i].averageAnalysis.disgustAverage * 100%> max="100"></progress>
+                            </div>
+
+                          </div>
+                        </div>
+                    </section>
+                    <%}%>
+            </div>
+        </div>
+    </div>
+</body>
 
 <!-- Footer -->
-</section>
-</div>
-</body>
