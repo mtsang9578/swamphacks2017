@@ -6,114 +6,98 @@
 <!-- Header -->
 
 <head>
-    <title>Depression</title>
-    <link type="text/css" rel="stylesheet" href="resources/text.css">
-    <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
+  <title>Depression</title>
+  <link type="text/css" rel="stylesheet" href="resources/text.css">
+  <link href="https://fonts.googleapis.com/css?family=Delius|Kalam|Pacifico|Short+Stack|Walter+Turncoat" rel="stylesheet">
 </head>
 
 <!-- Body -->
 
 <body>
-    <div class="background">
-        <div class="static">
-            <ul>
-                <li>
-                    <a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
-                </li>
-                <li><a href="status.html">Status</a> </li>
-                <li><a href="uploadPage.html">Update</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="index2.html">Site Info</a></li>
-                <li style="float:right" class="user"><a>Welcome, User</a></li>
-            </ul>
-        </div>
+<div class="background">
+  <div class="static">
+    <ul>
+      <li>
+        <a href="loginHome.html"><img src="resources/HomeIcon.png"></a>
+      </li>
+      <li><a href="status.html">Status</a> </li>
+      <li><a href="uploadPage.html">Update</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="index2.html">Site Info</a></li>
+      <li style="float:right" class="user"><a>Welcome, User</a></li>
+    </ul>
+  </div>
 
 
 
-        <!-- Content -->
-        <div class="static2">
-            <div class="moving">
-                <h1>Analysis</h1>
-                <section class="transbox">
-                    <p class="info"><b><i><%= (new Date(conversationDate)).toDateString() %></i></b></p>
-                    <% urls.forEach(function(url) {%>
-                        <img class="pics" src=<%=url %> >
-                        <%});%>
+  <!-- Content -->
+  <div class="static2">
+    <div class="moving">
+      <h1>Analysis</h1>
+      <section class="transbox">
+        <p class="info"><b><i>(Date)</i></b></p>
+          <% urls.forEach(function(url) {%>
+        <img class="pics" style="max-height: 50%;" src=<%= url %> >
+          <%});%>
 
-                            <br>
-                            <br>
-                            <br>
+        <br>
+        <br>
+        <br>
 
-                            <div class="together diagnosis-block">
-                                <div class="details-block">
-                                  <div class="details-label">Details:</div>
+        <div class="together diagnosis-block">
+          <div class="details-block">
+            <div class="details-label">Details:</div>
+            <br>
+            <b>Joy:</b>
+            <br>
+            <progress value=<%=averageAnalysis.joyAverage * 100%> max="100"></progress>
+            <br><b>Sadness:</b>
+            <br>
+            <progress value=<%=averageAnalysis.sadnessAverage * 100%> max="100"></progress>
+            <br><b>Fear:</b>
+            <br>
+            <progress value=<%=averageAnalysis.fearAverage * 100%> max="100"></progress>
+            <br><b>Anger:</b>
+            <br>
+            <progress value=<%=averageAnalysis.angerAverage * 100%> max="100"></progress>
+            <br><b>Disgust:</b>
+            <br>
+            <progress value=<%=averageAnalysis.disgustAverage * 100%> max="100"></progress>
 
+          </div>
 
-                                  <div class = "status-bar">
-                                    <div style="width:100%; text-align: left;"><b>Joy:</b></div>
-                                    <progress value=<%=averageAnalysis.joyAverage * 100%> max="100"></progress>
-                                  </div>
+          <hr>
 
-
-                                  <div class = "status-bar">
-                                    <div style="width:100%; text-align: left;"><b>Sadness:</b></div>
-                                    <progress value=<%=averageAnalysis.sadnessAverage * 100%> max="100"></progress>
-                                  </div>
-
-
-                                  <div class = "status-bar">
-                                    <div style="width:100%; text-align: left;"><b>Fear:</b></div>
-                                    <progress value=<%=averageAnalysis.fearAverage * 100%> max="100"></progress>
-                                  </div>
-
-
-                                  <div class = "status-bar">
-                                    <div style="width:100%; text-align: left;"><b>Anger:</b></div>
-                                    <progress value=<%=averageAnalysis.angerAverage * 100%> max="100"></progress>
-                                  </div>
-
-
-                                  <div class = "status-bar">
-                                    <div style="width:100%; text-align: left;"><b>Disgust:</b></div>
-                                    <progress value=<%=averageAnalysis.disgustAverage * 100%> max="100"></progress>
-                                  </div>
-
-                                </div>
-
-                                <hr>
-
-                                <div class="keywords-block">
-                                    <div class="keywords-label">Keywords:</div>
-                                  <div style="margin: 20px;">
-                                    <% averageAnalysis.topKeyWords.forEach( function(str) {%>
-                                        <div class=keyWord>
-                                            <%= str%>
-                                        </div>
-                                        <% });%>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="info diagnosis-block">
-                                <div class="diagnosis-section">
-                                    <div class="diagnosis-label">State</div>
-                                    <%= diagnosis.state%>
-                                </div>
-                                <div class="diagnosis-section">
-                                    <div class="diagnosis-label">Actions</div>
-                                    <%= diagnosis.actions%>
-                                </div>
-                                <div class="diagnosis-section">
-                                    <div class="diagnosis-label">What to look for</div>
-                                    <%= diagnosis.lookOut%>
-                                </div>
-                            </div>
-
-
-
-                            <!-- Footer -->
-                </section>
+          <div class="keywords-block">
+            <div class="keywords-label">Keywords:</div>
+              <% averageAnalysis.topKeyWords.forEach( function(str) {%>
+            <div class=keyWord>
+                <%= str%>
             </div>
+              <% });%>
+          </div>
+
         </div>
+
+        <div class="info diagnosis-block">
+          <div class="diagnosis-section">
+            <div class="diagnosis-label">State</div>
+              <%= diagnosis.state%>
+          </div>
+          <div class="diagnosis-section">
+            <div class="diagnosis-label">Actions</div>
+              <%= diagnosis.actions%>
+          </div>
+          <div class="diagnosis-section">
+            <div class="diagnosis-label">What to look for</div>
+              <%= diagnosis.lookOut%>
+          </div>
+          <div>
+          </div>
+
+        </div>
+        <!-- Footer -->
+      </section>
     </div>
+  </div>
 </body>
