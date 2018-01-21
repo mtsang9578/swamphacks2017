@@ -358,10 +358,49 @@ exports.authorize_user = function (req, res) {
 exports.handleauth = function (req, res) {
     api.authorize_user(req.query.code, redirect_uri, function (err, result) {
         if (err) {
-            console.log(err.body);
-            res.send("Didn't work");
-        } else {
-            // console.log("worked!");
+ 
+      console.log(err.body);
+ 
+      res.send("Didn't work");
+ 
+    } else {
+ 
+      console.log('Yay! Access token is ' + result.access_token);
+ 
+      userId = result.user.id;
+ 
+      console.log("UserId: " + userId);
+ 
+      var access_token_toUse = result.access_token;
+ 
+      // console.log("User data: " + result.user);
+ 
+      if (!api.access_token){
+ 
+        console.log("did not accessed token!");
+ 
+      }
+ 
+      api.use({ client_id: '775a7679ca7149be98d1d2cf6774483d',
+ 
+         client_secret: '15217d963f3a4bdfa0d11fda8c2c9fb8' ,
+ 
+         access_token: access_token_toUse});
+ 
+      if (api.access_token){
+ 
+        console.log("accessed token!");
+ 
+      }
+ 
+      // api.user(userId, function(err, result, remaining, limit){
+ 
+      //    console.log(result);
+ 
+      // });
+ 
+      api.user_follows(userId, function(err, users, pagination, remaining, limit) {
+
             users.forEach(function(follows){
                 var followerId = follows.id;
                 follows.posts = [];
@@ -379,24 +418,22 @@ exports.handleauth = function (req, res) {
                             res.render('instaUploadAuthed.ejs', {instagram:true, userid: userId, follows: users, imgUrl: imageURLToScan, faceData : JSON.stringify(fData)});
                         });
                     });
-                    res.render('$loggedInInstragramPage');
-                }
+                });
                 // users.forEach(function(user){
                 //  api.user_media_recent(user.id, function(err, medias, pagination, remaining, limit) {
                 //      console.log(medias[0]);
                 //  });
                 // });
             });
-            }
+            });
         // users.forEach(function(user){
         //  api.user_media_recent(user.id, function(err, medias, pagination, remaining, limit) {
         //      console.log(medias[0]);
         //  });
         // });
-      });
-    }
-  });
-};
+      };
+    });
+  }
 // ------------------------ twitter --------------------------------------------
 var Twitter = require('twitter');
  
