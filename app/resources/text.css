@@ -6,23 +6,19 @@ h1 {
     font-size: 80px;
     text-align: center;
     color: #131936;
-    font-weight: 10;
+    font-weight: 10px;
     font-family: "Pacifico", cursive;
 }
 
 h3 {
     font-size: 30px;
     color: #131936;
-    font-weight: 10;
+    font-weight: 10px;
     font-family: "Kalam", cursive;
 }
 
 h5 .special {
     text-align: left;
-}
-
-h5 .special {
-  text-align: left;
 }
 
 h5 {
@@ -37,7 +33,7 @@ button {
     background-color: #8F527A;
     font-family: "Delius", cursive;
     padding: 30px 30px;
-    font-size: 30;
+    font-size: 30px;
     border-radius: 20px;
     border: 0px;
 }
@@ -49,7 +45,7 @@ body .transbox {
     padding-bottom: 50px;
     background-color: rgba(219, 219, 219, 0.85);
     border: 0px solid black;
-    z-index:1;
+    z-index: 1;
     position: static;
     border-radius: 50px;
 }
@@ -86,7 +82,7 @@ li a:hover:not(.active) {
     color: black;
 }
 
-.background{
+.background {
     background-image: url(city2.gif);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -133,19 +129,49 @@ li a:hover:not(.active) {
 }
 
 .info {
-  font-family: "Delius", cursive;
-  font-size: 18;
-  margin-left: 50px;
-  margin-right: 50px;
+    font-family: "Delius", cursive;
+    font-size: 18;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.info2 {
-  font-family: "Delius", cursive;
-  font-size: 18;
-  text-align: right;
-  margin-right: 50px;
-  margin-left: 50px;
+.keywords-block {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
 
+.keywords-label {
+    text-align: center;
+    font-family: "Delius", cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.diagnosis-block {
+    font-family: "Delius", cursive;
+}
+
+.details-block {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.details-label {
+    text-align: center;
+    font-family: "Delius", cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+.info2 {
+    font-family: "Delius", cursive;
+    font-size: 18px;
+    text-align: right;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .infoHeader {
@@ -203,9 +229,9 @@ body .login {
     padding-bottom: 50px;
     background-color: rgba(219, 219, 219, 0.85);
     border: 0px solid black;
-    z-index:1;
+    z-index: 1;
     position: static;
-    align-content:center;
+    align-content: center;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -221,4 +247,13 @@ div .together {
 
 .pics {
     max-height: 300px;
+}
+
+.diagnosis-section {
+    text-align: left;
+    padding: 5px;
+}
+
+.diagnosis-label {
+    font-size: 32px;
 }

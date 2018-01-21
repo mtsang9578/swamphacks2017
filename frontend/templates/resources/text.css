@@ -1,41 +1,41 @@
 body {
-  background-image: url(city2.gif);
+    background-image: url(city2.gif);
 }
 
 h1 {
-  font-size: 80px;
-  text-align: center;
-  color: #131936;
-  font-weight: 10;
-  font-family: "Pacifico", cursive;
+    font-size: 80px;
+    text-align: center;
+    color: #131936;
+    font-weight: 10;
+    font-family: "Pacifico", cursive;
 }
 
 h3 {
-  font-size: 30px;
-  color: #131936;
-  font-weight: 10;
-  font-family: "Kalam", cursive;
+    font-size: 30px;
+    color: #131936;
+    font-weight: 10;
+    font-family: "Kalam", cursive;
 }
 
 h5 .special {
-  text-align: left;
+    text-align: left;
 }
 
 h5 {
-  font-size: 18px;
-  text-align: center;
-  color: #3E3E3E;
-  font-weight: 10;
-  font-family: "Delius", cursive;
+    font-size: 18px;
+    text-align: center;
+    color: #3E3E3E;
+    font-weight: 10;
+    font-family: "Delius", cursive;
 }
 
 button {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 30px 30px;
-  font-size: 30;
-  border-radius: 20px;
-  border: 0px;
+    background-color: #8F527A;
+    font-family: "Delius", cursive;
+    padding: 30px 30px;
+    font-size: 30;
+    border-radius: 20px;
+    border: 0px;
 }
 
 body .transbox {
@@ -45,7 +45,7 @@ body .transbox {
     padding-bottom: 50px;
     background-color: rgba(219, 219, 219, 0.85);
     border: 0px solid black;
-    z-index:1;
+    z-index: 1;
     position: static;
     border-radius: 50px;
 }
@@ -62,7 +62,7 @@ ul {
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
@@ -79,79 +79,109 @@ li a:hover:not(.active) {
 }
 
 .dropbtn {
-  color: black;
+    color: black;
 }
 
-.background{
-  background-image: url(city2.gif);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: gray;
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
+.background {
+    background-image: url(city2.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: gray;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
 }
 
 .static {
-  position: fixed;
-  width: 99%;
-  left: 50%;
-  transform: translate(-50%);
+    position: fixed;
+    width: 99%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .static2 {
-  position: relative;
-  height: 85%;
-  overflow-y: scroll;
-  display: block;
-  margin-top: 100px;
+    position: relative;
+    height: 85%;
+    overflow-y: scroll;
+    display: block;
+    margin-top: 100px;
 }
 
 .moving {
-  height: 300px;
-  text-align: center;
+    height: 300px;
+    text-align: center;
 }
 
 .profile {
-  position: fixed;
+    position: fixed;
 }
 
 .helloUser {
-  font-size: 100px;
-  margin-top: 50px;
-  font-family: "Pacifico", cursive;
+    font-size: 100px;
+    margin-top: 50px;
+    font-family: "Pacifico", cursive;
 }
 
 .user {
-  margin-top: 14px;
-  margin-right: 14px;
+    margin-top: 14px;
+    margin-right: 14px;
 }
 
 .info {
-  font-family: "Delius", cursive;
-  font-size: 18;
-  margin-left: 50px;
-  margin-right: 50px;
+    font-family: "Delius", cursive;
+    font-size: 18;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.keywords-block {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.keywords-label {
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.diagnosis-block {
+    font-family: "Delius", cursive;
+}
+
+.details-block {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.details-label {
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 
 .info2 {
-  font-family: "Delius", cursive;
-  font-size: 18;
-  text-align: right;
-  margin-right: 50px;
-  margin-left: 50px;
+    font-family: "Delius", cursive;
+    font-size: 18;
+    text-align: right;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .infoHeader {
-  font-family: "Kalam", cursive;
-  font-size: 30;
-  margin-left: 70px;
-  margin-right: 70px;
+    font-family: "Kalam", cursive;
+    font-size: 30;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 .open {
-  font-size: 100;
+    font-size: 100;
 }
 
 ::-webkit-scrollbar {
@@ -159,61 +189,70 @@ li a:hover:not(.active) {
 }
 
 .submit {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 18px 18px;
-  font-size: 20;
-  border-radius: 20px;
-  border: 0px;
+    background-color: #8F527A;
+    font-family: "Delius", cursive;
+    padding: 18px 18px;
+    font-size: 20;
+    border-radius: 20px;
+    border: 0px;
 }
 
 .chooseFile {
-  background-color: #8F527A;
-  font-family: "Delius", cursive;
-  padding: 20px 20px;
-  font-size: 20;
-  border-radius: 20px;
-  border: 0px;
+    background-color: #8F527A;
+    font-family: "Delius", cursive;
+    padding: 20px 20px;
+    font-size: 20;
+    border-radius: 20px;
+    border: 0px;
 }
 
 .email {
-  font-family: "Delius", cursive;
-  font-size: 20;
+    font-family: "Delius", cursive;
+    font-size: 20;
 }
 
 .password {
-  font-family: "Delius", cursive;
-  font-size: 20;
+    font-family: "Delius", cursive;
+    font-size: 20;
 }
 
 .form-control {
-  min-height: 15px;
+    min-height: 15px;
 }
 
 body .login {
-  text-align: center;
-  height: 285px;
-  width: 400px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background-color: rgba(219, 219, 219, 0.85);
-  border: 0px solid black;
-  z-index:1;
-  position: static;
-  align-content:center;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
+    text-align: center;
+    height: 285px;
+    width: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(219, 219, 219, 0.85);
+    border: 0px solid black;
+    z-index: 1;
+    position: static;
+    align-content: center;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 div .together {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  margin-left: 70px;
-  margin-right: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 .pics {
-  max-height: 300px;
+    max-height: 300px;
+}
+
+.diagnosis-section {
+    text-align: left;
+    padding: 5px;
+}
+
+.diagnosis-label {
+    font-size: 32px;
 }
