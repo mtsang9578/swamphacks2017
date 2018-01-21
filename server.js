@@ -21,10 +21,10 @@ var configDB = require('./config/database.js');
 var emotionDetection = require('./emotion-detection');
 //var googleVision = require('./google-vision');
 
-var sampleText = "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.";
-emotionDetection.emotionResponce(sampleText, function(response) {
- 	console.log(JSON.stringify(emotionDetection.aggregateWatsonData_average_topThree(response), null, 2));
- });
+// var sampleText = "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries.";
+// emotionDetection.emotionResponce(sampleText, function(response) {
+//  	console.log(JSON.stringify(emotionDetection.aggregateWatsonData_average_topThree(response), null, 2));
+//  });
 // emotionDetection.toneResponce(sampleText, function(response) {
 //  	console.log(JSON.stringify(response, null, 2));
 //  });
